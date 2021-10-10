@@ -25,29 +25,79 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     const questions = [
-      { id: 1, question: 'Ciastko', answer: 'der Kuchen' },
-      { id: 2, question: 'Jogurt', answer: 'der Joghurt' },
-      { id: 3, question: 'Mleko', answer: 'die Milch' },
-      { id: 4, question: 'Masło', answer: 'die Butter' },
-      { id: 5, question: 'Chleb', answer: 'das Brot' },
-      { id: 6, question: 'Kurczak', answer: 'das Hähnchen' },
-      { id: 7, question: 'Bułka', answer: 'das Brötchen' },
-      { id: 8, question: 'Mango', answer: 'die Mango' },
-      { id: 9, question: 'Jabłko', answer: 'der Apfel' },
-      { id: 10, question: 'Ser', answer: 'der Käse' },
-      { id: 11, question: 'Banan', answer: 'die Banane' },
-      { id: 12, question: 'Jajko', answer: 'das Ei' },
-      { id: 13, question: 'Jajka', answer: 'die Eier' },
-      { id: 14, question: 'Szynka', answer: 'der Schinken' },
-      { id: 15, question: 'Kotlet', answer: 'das Kotlet' },
-      { id: 16, question: 'Posiłki', answer: 'die Mahlzeiten' },
-      { id: 17, question: 'Mięso', answer: 'das Fleisch' },
-      { id: 18, question: 'Owoce', answer: 'die Obst' },
-      { id: 19, question: 'Warzywa', answer: 'die Gemüse' },
-      { id: 20, question: 'Woda', answer: 'das Wasser' },
+      { id: 1001, question: 'Ciastko', answer: 'der Kuchen', type: 'noun' },
+      { id: 1002, question: 'Jogurt', answer: 'der Joghurt', type: 'noun' },
+      { id: 1003, question: 'Mleko', answer: 'die Milch', type: 'noun' },
+      { id: 1004, question: 'Masło', answer: 'die Butter', type: 'noun' },
+      { id: 1005, question: 'Chleb', answer: 'das Brot', type: 'noun' },
+      { id: 1006, question: 'Kurczak', answer: 'das Hähnchen', type: 'noun' },
+      { id: 1007, question: 'Bułka', answer: 'das Brötchen', type: 'noun' },
+      { id: 1008, question: 'Mango', answer: 'die Mango', type: 'noun' },
+      { id: 1009, question: 'Jabłko', answer: 'der Apfel', type: 'noun' },
+      { id: 1010, question: 'Ser', answer: 'der Käse' },
+      { id: 1011, question: 'Banan', answer: 'die Banane' },
+      { id: 1012, question: 'Jajko', answer: 'das Ei' },
+      { id: 1013, question: 'Jajka', answer: 'die Eier' },
+      { id: 1014, question: 'Szynka', answer: 'der Schinken' },
+      { id: 1015, question: 'Kotlet', answer: 'das Kotlet' },
+      // { id: 1016, question: 'Posiłki', answer: 'die Mahlzeiten' },
+      // { id: 1017, question: 'Mięso', answer: 'das Fleisch' },
+      // { id: 1018, question: 'Owoce', answer: 'die Obst' },
+      // { id: 1019, question: 'Warzywa', answer: 'die Gemüse' },
+      // { id: 1020, question: 'Woda', answer: 'das Wasser' },
+      // { id: 2001, question: 'iść', answer: 'gehen', type: 'verb' },
+      // { id: 2002, question: 'jechać', answer: 'fahren', type: 'verb' },
+      // { id: 2003, question: 'biec', answer: 'laufen', type: 'verb' },
+      // { id: 2004, question: 'jeść', answer: 'essen', type: 'verb' },
+      // { id: 2005, question: 'sikać', answer: 'pinkeln', type: 'verb' },
+      // { id: 2006, question: 'uczyć się', answer: 'lernen', type: 'verb' },
+      // { id: 3001, question: 'pierwszy', answer: 'erster', type: 'numeral' },
+      // { id: 3002, question: 'pierwsza', answer: 'erste', type: 'numeral' },
+      // { id: 3003, question: 'pierwsze', answer: 'erstes', type: 'numeral' },
+      // { id: 3004, question: 'drugi', answer: 'zweiter', type: 'numeral' },
+      // { id: 3005, question: 'druga', answer: 'zweite', type: 'numeral' },
+      // { id: 3006, question: 'drugie', answer: 'zweites', type: 'numeral' },
+      // { id: 3007, question: 'trzeci', answer: 'dritter', type: 'numeral' },
+      // { id: 3008, question: 'trzecia', answer: 'dritte', type: 'numeral' },
+      // { id: 3009, question: 'trzecie', answer: 'drittes', type: 'numeral' },
+      // { id: 4001, question: 'mu, jemu', answer: 'ihm', type: 'pronoun' },
+      // { id: 4002, question: 'go, niego', answer: 'ihn', type: 'pronoun' },
+      // { id: 4003, question: 'dokąd', answer: 'wohin', type: 'pronoun' },
+      // { id: 4004, question: 'gdzie', answer: 'wo', type: 'pronoun' },
+      // { id: 4005, question: 'skąd', answer: 'woher', type: 'pronoun' },
+      // { id: 4006, question: 'mój', answer: 'mein', type: 'pronoun' },
+      // { id: 4007, question: 'moja', answer: 'meiner', type: 'pronoun' },
+      // { id: 4008, question: 'moje', answer: 'mein', type: 'pronoun' },
+      // { id: 4009, question: 'twój', answer: 'dein', type: 'pronoun' },
+      // { id: 4010, question: 'twoja', answer: 'deine', type: 'pronoun' },
+      // { id: 4011, question: 'twoje', answer: 'dein', type: 'pronoun' },
+      // { id: 4012, question: 'ja', answer: 'ich', type: 'pronoun' },
+      // { id: 4013, question: 'ty', answer: 'du', type: 'pronoun' },
+      // { id: 4014, question: 'on', answer: 'er', type: 'pronoun' },
+      // { id: 4015, question: 'ona', answer: 'sie', type: 'pronoun' },
+      // { id: 4016, question: 'ono (np. to dziecko)', answer: 'es', type: 'pronoun' },
+      // { id: 4017, question: 'oni', answer: 'Sie', type: 'pronoun' },
+      // { id: 5001, question: 'ładny', answer: 'schön', type: 'adjective' },
+      // { id: 5002, question: 'brzydki', answer: 'hässlich', type: 'adjective' },
+      // { id: 5003, question: 'szybki', answer: 'schnell', type: 'adjective' },
+      // { id: 5004, question: 'wysoki', answer: 'groß', type: 'adjective' },
+      // { id: 5005, question: 'niski', answer: 'niedrig', type: 'adjective' },
+      // { id: 5006, question: 'smaczny', answer: 'lecker', type: 'adjective' },
+      // { id: 5006, question: 'czerwony', answer: 'rot', type: 'adjective' },
+      // { id: 5006, question: 'zielony', answer: 'grün', type: 'adjective' },
+      // { id: 5006, question: 'niebieski', answer: 'blau', type: 'adjective' },
+      // { id: 5006, question: 'biały', answer: 'weiß', type: 'adjective' },
+      // { id: 5006, question: 'czarny', answer: 'schwarz', type: 'adjective' },
+      // { id: 6001, question: 'szybko', answer: 'schnell', type: 'adverb' },
+      // { id: 6002, question: 'wolno', answer: 'langsam', type: 'adverb' },
+      // { id: 6003, question: 'wysoko', answer: 'hoch', type: 'adverb' },
+      // { id: 6004, question: 'nisko', answer: 'niedrig', type: 'adverb' },
+      // { id: 6005, question: 'daleko', answer: 'weit', type: 'adverb' },
+      // { id: 6006, question: 'blisko', answer: 'nah', type: 'adverb' },
+      // { id: 6007, question: 'nisko', answer: 'niedrig', type: 'adverb' },
     ]
     return {
-      questionIndex: 0,
+      questionIndex: Math.floor(Math.random() * questions.length),
       paused: false,
       pauseLength: 2,
       questions,
@@ -56,15 +106,29 @@ export default defineComponent({
   },
   computed: {
     exercise() {
-      const { question, answer } = this.questions[this.questionIndex]
+      const { question, answer, type } = this.questions[this.questionIndex]
       const translated = answer.split(' ')[1]
-      return {
-        question,
-        answer,
-        options: [
-          ...(['die', 'der', 'das'].map(artikel => [ artikel, translated ].join(' '))),
-          ...(this.questions.filter(question => question.answer !== answer).random(4).map(question => question.answer))
-        ].shuffle()
+
+      const questions = this.questions.filter(question => question.type === type)
+
+      if (type === 'noun') {
+        return {
+          question,
+          answer,
+          options: [
+            ...(['die', 'der', 'das'].map(artikel => [ artikel, translated ].join(' '))),
+            ...(questions.filter(question => question.answer !== answer).random(4).map(question => question.answer))
+          ].shuffle()
+        }
+      } else {
+        return {
+          question,
+          answer,
+          options: [
+            answer,
+            ...(questions.filter(question => question.answer !== answer).random(4).map(question => question.answer))
+          ].shuffle()
+        }
       }
     },
     lastAnswer() {
